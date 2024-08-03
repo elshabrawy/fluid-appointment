@@ -1,0 +1,96 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.meeting-info {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.doctor-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  margin-bottom: 1rem;
+}
+
+.date-time {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.date, .time {
+  background-color: rgba(200, 200, 200, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .greeting {
+    font-size: 1rem;
+  }
+
+  .doctor-name {
+    font-size: 1.3rem;
+  }
+
+  .date-time {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .doctor-name {
+    font-size: 1.1rem;
+  }
+
+  .date, .time {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}
