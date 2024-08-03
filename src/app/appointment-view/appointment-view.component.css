@@ -3,94 +3,107 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   margin: 0;
-  background-image: url('/assets/background.jpg');
+  background-image: url("/assets/background.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   font-family: Arial, sans-serif;
+  position: relative;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+:host > * {
+  position: relative;
+  z-index: 2;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
+  color: white;
+  text-shadow: 2px 2px #000000;
 }
 
 .logo {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 35rem;
+  margin-bottom: 0.25rem;
 }
-
 .greeting {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .meeting-info {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-style: italic;
+  font-size: 1.5rem;
 }
 
 .doctor-name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .location {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 2rem;
 }
 
-.date-time {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.date, .time {
+.date,
+.time {
   background-color: rgba(200, 200, 200, 0.7);
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 12px;
   font-weight: bold;
+  font-size: 3rem;
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 1rem;
-  }
-
+@media (max-width: 768px) {
   .logo {
-    font-size: 2.5rem;
+    width: 80%;
   }
 
-  .greeting {
-    font-size: 1rem;
-  }
-
-  .doctor-name {
-    font-size: 1.3rem;
-  }
-
-  .date-time {
-    flex-direction: column;
-    align-items: center;
+  .greeting,
+  .meeting-info,
+  .doctor-name,
+  .location,
+  .date,
+  .time {
+    font-size: 4vw;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .logo {
-    font-size: 2rem;
+    width: 80%;
   }
 
-  .doctor-name {
-    font-size: 1.1rem;
-  }
-
-  .date, .time {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.9rem;
+  .greeting,
+  .meeting-info,
+  .doctor-name,
+  .location,
+  .date,
+  .time {
+    font-size: 5vw;
   }
 }

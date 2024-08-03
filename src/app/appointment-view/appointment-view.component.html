@@ -1,11 +1,12 @@
-<div class="container">
-  <h1 class="logo">Fluid</h1>
-  <p class="greeting">Hello {{patientName}}</p>
-  <p class="meeting-info">You will meet</p>
-  <h2 class="doctor-name">{{doctorName}}</h2>
-  <p class="location">In Clinic {{clinicNumber}} on</p>
-  <div class="date-time">
-    <p class="date">{{appointmentDate}}</p>
-    <p class="time">{{appointmentTime}}</p>
+<div class="background">
+  <div><img src="assets/Fluid white.svg" class="logo" alt="" /></div>
+  <div class="container">
+    <p class="greeting">Hello {{ appointment?.customerEnName }}</p>
+    <p class="meeting-info">you will meet</p>
+    <p class="doctor-name">{{ appointment?.providerEnName }}</p>
+    <p class="location">in {{ appointment?.facilityEnName }} on</p>
+    <p class="date">{{ date }}</p>
+    <p class="meeting-info">at</p>
+    <p class="time">{{ time }}</p>
   </div>
 </div>
