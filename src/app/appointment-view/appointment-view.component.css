@@ -5,12 +5,14 @@
   height: 100vh;
   width: 100vw;
   margin: 0;
+  padding: 0;
   background-image: url("/assets/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
   position: relative;
+  overflow: hidden;
 }
 
 :host::before {
@@ -37,36 +39,43 @@
   height: 100%;
   width: 100%;
   text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .container {
   color: white;
   text-shadow: 2px 2px #000000;
+  max-width: 90%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .logo {
-  width: 35rem;
-  margin-bottom: 0.25rem;
+  width: 35vw;
 }
+
 .greeting {
-  font-size: 2.5rem;
-  margin-bottom: 0.25rem;
+  font-size: 2.5vw;
+  margin: 0;
 }
 
 .meeting-info {
-  margin-bottom: 0.25rem;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.75vw;
+  margin: 0;
 }
 
 .doctor-name {
-  font-size: 2.5rem;
-  margin-bottom: 0.25rem;
+  font-size: 3vw;
+  margin: 0;
 }
 
 .location {
-  margin-bottom: 0.25rem;
-  font-size: 2rem;
+  font-size: 2.5vw;
+  margin: 0;
 }
 
 .date,
@@ -75,27 +84,31 @@
   padding: 0.5rem 1rem;
   border-radius: 12px;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.75vw;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .logo {
-    width: 80%;
+    width: 60vw;
   }
 
-  .greeting,
+  .greeting {
+    font-size: 6vw;
+  }
+
   .meeting-info,
   .doctor-name,
   .location,
   .date,
   .time {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 80%;
+    width: 70vw;
   }
 
   .greeting,
