@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export default class AppointmentViewComponent implements OnInit {
   appointment: any;
-  scheduledTime = '';
+  expectedTime = '';
   date: string = '';
   time: string = '';
   constructor(
@@ -31,7 +31,7 @@ export default class AppointmentViewComponent implements OnInit {
         .getAppointment(apptIdFromUrl)
         .subscribe((data) => {
           this.appointment = data.items[0];
-          this.scheduledTime = data.items[0].scheduledTime;
+          this.expectedTime = data.items[0].expectedTime;
           this.splitDateTime()
         });
     }
@@ -50,7 +50,7 @@ export default class AppointmentViewComponent implements OnInit {
   }
 
   splitDateTime() {
-    const [datePart, timePart] = this.scheduledTime.split(' ');
+    const [datePart, timePart] = this.expectedTime.split(' ');
     const [day, month, year] = datePart.split('-');
     const formattedDate = new Date(`${year}-${month}-${day}T${timePart}`);
 
